@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieActivity">
+    
+    <ImageView
+        android:id="@+id/image_view_cover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/shadows"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintDimensionRatio="16:9"
+        android:scaleType="centerCrop"/>
+
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:src="@drawable/play_custom"
+        app:layout_constraintStart_toStartOf="@+id/image_view_cover"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_cover"
+        app:layout_constraintTop_toTopOf="@+id/image_view_cover"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_cover"
+/>
+    <TextView
+        android:id="@+id/text_view_title"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_cover"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/movie_title"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        />
+
+    <TextView
+        android:id="@+id/text_view_desc"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_cover"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="48dp"
+        android:maxLines="3"
+        android:lineSpacingExtra="3sp"
+        android:text="After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption."
+        tools:text="After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption."
+        />
+
+    <TextView
+        android:id="@+id/text_view_cast"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="48dp"
+        android:maxLines="3"
+        android:lineSpacingExtra="3sp"
+        android:text="Christian Bale, Michael Caine, Liam Neeson, Katie Holmes, Gary Oldman, Cillian Murphy, Tom Wilkinson, Rutger Hauer"
+        tools:text="Christian Bale, Michael Caine, Liam Neeson, Katie Holmes, Gary Oldman, Cillian Murphy, Tom Wilkinson, Rutger Hauer"
+        />
+
+    <TextView
+        android:id="@+id/similar"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_cast"
+        android:text="@string/similar"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_similar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/similar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        tools:listitem="@layout/movie_item_similar"
+        android:paddingBottom="4dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

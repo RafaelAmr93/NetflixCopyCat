@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NetflixCopyCat</string>
+    <string name="category">Categoria</string>
+    <string name="cast">Elenco: %1$s</string>
+    <string name="similar">OPÇÕES SEMELHANTES</string>
+    <string name="movie_title">Titulo</string>
+</resources>
